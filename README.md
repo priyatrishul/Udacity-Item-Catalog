@@ -50,5 +50,7 @@ Install `VirtualBox` from [here](https://www.virtualbox.org/).
 9. Access API Endpoints
 
     `http://localhost:8000/catalog.json`
+    
     `http://localhost:8000/category.json`
+    
     `http://localhost:8000/items.json`
