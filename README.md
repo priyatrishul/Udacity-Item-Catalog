@@ -28,7 +28,9 @@ Install `VirtualBox` from [here](https://www.virtualbox.org/).
 `vagrant up`.
 3. When `vagrant up` is finished running,you can run `vagrant ssh` to log in.
 4. to access the shared folder run
+
 `cd /vagrant/catalog`
+
 5. Setup the database
 `python db_setup.py`
 6. load sample data
