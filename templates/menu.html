@@ -1,0 +1,56 @@
+{% extends "header.html" %}
+
+{% block content %}
+
+    <div class =" container ">
+
+        <div class ="list-group list-group-flush category">
+            <h3>Categories</h3>
+            {% for i in categories %}   
+                    <a href = "{{url_for('showCategory', cat_name=i.name)}}" class="list-group-item list-group-item-action" style="border: none">
+                        <p><span>{{i.name}}</span></p>               
+                    </a>
+            {% endfor %}
+        </div>
+
+        <div class ="list-group list-group-flush item">
+            <div class="container">
+                    {%if 'username' in session %}
+                        <a href = "{{ url_for('addItem')}}" > 
+                            <span>Add new Item</span>
+                        </a> 
+                    {% endif %}      
+            </div>
+                    <div >
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                <ul>
+                                    {% for message in messages %}
+                                        <li> <strong> {{ message }} </strong> </li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            {% endwith %}
+                    </div>
+            <div>
+                    {% if count %}
+                        <h3>{{cat_name}} Items ({{count}} Items) </h3>
+                    {% endif %}
+                    {% if not count %}
+                        <h3>{{cat_name}} Items</h3>
+                    {% endif %}
+                    {% for i in items %}
+
+                        <a href = "{{url_for('showItem', cat_name=i.cat_name, item_name=i.name)}}" class="list-group-item list-group-item-action" style="border: none">
+                            <p></p><span>{{i.name}}</span>
+                            <span class='slant'>({{i.cat_name}})</span><p></p>
+                        </a>
+                    {% endfor %}
+            </div>
+            
+        </div>
+        
+    </div>
+
+{% endblock %}
+

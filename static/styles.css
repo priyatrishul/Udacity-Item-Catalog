@@ -1,0 +1,26 @@
+    
+body            { font-family: sans-serif;}
+h1, h2, h3, h4       { color: rgb(20, 18, 18); }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h2              { font-size: 1.2em; }
+
+p               { color:rgb(20, 18, 18); }
+
+.header{background-color: #10093a;;width:100%;padding-top:10px; padding-bottom: 10px;padding-left:80px} 
+.head{color:rgb(240, 244, 245);width:50%}
+a {text-decoration: none; color:rgb(20, 18, 18); font-size: 1em;border:none;}
+
+span {text-decoration: none; color:rgb(158, 17, 17);border:none;}
+.slant {text-decoration: none; color:rgb(158, 17, 17);font-style: oblique;}
+.login-btn{color:rgb(196, 45, 35);background: #cee5F5;float:right;padding-right:40px}
+.category {float: left;width: 30%;padding-top: 50px;border-width:5px;  
+   border-right-style:solid;border-right-color:#f2f2f2;}
+.item {float: left;padding-top: 50px;border:none;padding-left: 20px}
+.buffer {padding-top: 50px; border: 2px solid #eee; background-color: #e6d8d8;margin:25px;}
+.flash          { background: #cee5F5; }
+.center {
+   margin: 20%;
+   width: 40%;
+   border: 3px solid rgb(173, 33, 68);
+   padding: 10px;
+ }

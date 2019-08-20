@@ -1,0 +1,28 @@
+{% extends "header.html" %}
+
+{% block content %}
+<div class="container buffer">
+    <h1>{{item.name}}</h1>
+    <div class="jumbotron ">
+        <p>{{item.description}}</p>
+    </div>
+    <div >
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li> <strong> {{ message }} </strong> </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="form-group">
+            {%if 'username' in session %}
+            <a href = "{{ url_for('editItem', item_name=item.name)}}" class="btn btn-primary"> Edit </a>
+            <a href = "{{ url_for('deleteItem', item_name=item.name)}}" class="btn btn-danger"> Delete </a>
+            {% endif %} 
+    </div>
+</div>
+{% endblock %}
+

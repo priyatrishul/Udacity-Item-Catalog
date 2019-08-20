@@ -1,0 +1,49 @@
+{% extends "header.html" %}
+
+{% block content %}
+    <div class="container buffer">
+        <h1>Edit Item</h1>
+        <form action="{{ url_for('editItem',item_name=item.name)}}" method = "post">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="name" value = '{{item.name }}'>
+                </div>
+
+                <div class="form-group">
+                        <label>Description:</label>
+                        <textarea type="text" class="form-control" rows="5" name="description">{{item.description}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Category:</label>
+                    <select name="category" value ="{{item.cat_name}}">
+                    {% for each in category %}
+                        {% if each.name == item.cat_name %}
+                            <option selected value="{{each.name}}">{{each.name}}</option>
+                        {% else %}
+                        <option  value="{{each.name}}">{{each.name}}</option>
+                        {% endif %}
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                        <input type='submit' class="btn btn-primary" value='Edit'>
+                        <a href = "{{ url_for('showItem', item_name=item.name,cat_name=item.cat_name)}}" class="btn btn-danger"> Cancel </a>
+                        
+                </div>
+
+        </form>
+        <div >
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li> <strong> {{ message }} </strong> </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
+    </div>
+
+    </div>
+{% endblock %}

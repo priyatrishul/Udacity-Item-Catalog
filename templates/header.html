@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+<body>
+		<div class="header">
+				<div class ="login-btn">
+						{%if 'username' not in session %}
+							<a class="btn" href="{{url_for('showLogin')}}">Click Here to Login </a>
+						{% else %}
+							<a class="btn" href="{{url_for('gdisconnect')}}">Logout </a>
+						{% endif %}
+				
+					</div>       
+				<div>
+				<a href ="{{url_for('showCategories')}}"><h1 class="head">Catalog App</h1></a>
+				</div>   
+    
+		</div>
+		
+		<div class="container">
+				{% block content %}
+				{% endblock %}
+		</div>
+</body>
+
+</html>
+	
