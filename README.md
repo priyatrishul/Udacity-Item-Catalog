@@ -29,17 +29,26 @@ Install `VirtualBox` from [here](https://www.virtualbox.org/).
 3. When `vagrant up` is finished running,you can run `vagrant ssh` to log in.
 4. to access the shared folder run
 
-`cd /vagrant/catalog`
+    `cd /vagrant/catalog`
 
 5. Setup the database
-`python db_setup.py`
+
+    `python db_setup.py`
+   
 6. load sample data
-`python catalogdata.py`
+
+    `python catalogdata.py`
+
 7. Run the application
-`python catalog.py`
+
+    `python catalog.py`
+
 8. Access the application
-`http://localhost:8000/`
+
+    `http://localhost:8000/`
+
 9. Access API Endpoints
-`http://localhost:8000/catalog.json`
-`http://localhost:8000/category.json`
-`http://localhost:8000/items.json`
+
+    `http://localhost:8000/catalog.json`
+    `http://localhost:8000/category.json`
+    `http://localhost:8000/items.json`
